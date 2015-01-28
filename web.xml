@@ -207,11 +207,11 @@
 		</context-param> <context-param> <param-name>client_id</param-name> <param-value>357055730782-ce5s36r4ro4squed3lhna7nh1ct1ra1g.apps.googleusercontent.com</param-value> 
 		</context-param> <context-param> <param-name>client_secret</param-name> <param-value>paxHJ_T_5HNVDAE8dKqPZmy7</param-value> 
 		</context-param> <context-param> <param-name>db_user</param-name> <param-value>postgres</param-value> 
-		</context-param> <context-param> <param-name>db_password</param-name> <param-value>postgresadmin@r1sl1n</param-value> 
-		</context-param> <context-param> <param-name>jdbc</param-name> <param-value>jdbc:postgresql://localhost:5432/notifier2</param-value> 
-		</context-param> <context-param> <param-name>ics_jdbc</param-name> <param-value>jdbc:postgresql://localhost:5432/notifier2</param-value> 
-		</context-param> <context-param> <param-name>jdbc_users</param-name> <param-value>jdbc:postgresql://localhost:5432/users</param-value> 
-		</context-param> <context-param> <param-name>redirect_uri</param-name> <param-value>http://rislin.info/Notifive_Calendar/auth</param-value> 
+		</context-param> <context-param> <param-name>db_password</param-name> <param-value></param-value> 
+		</context-param> <context-param> <param-name>jdbc</param-name> <param-value></param-value> 
+		</context-param> <context-param> <param-name>ics_jdbc</param-name> <param-value></param-value> 
+		</context-param> <context-param> <param-name>jdbc_users</param-name> <param-value></param-value> 
+		</context-param> <context-param> <param-name>redirect_uri</param-name> <param-value></param-value> 
 		</context-param> <context-param> <param-name>current_user</param-name> <param-value>laurie@rislin.com</param-value> 
 		</context-param> <context-param> <param-name>selected_calendar</param-name> 
 		<param-value>22</param-value> </context-param> <context-param> <param-name>notification_api_url</param-name> 
