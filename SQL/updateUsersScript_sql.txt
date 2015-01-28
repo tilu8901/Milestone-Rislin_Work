@@ -1,0 +1,11 @@
+*Add user_type and user_status column
+
+alter table users add user_type character varying, add user_status character varying
+
+*Update user_type column
+
+update users as u set user_type = CASE WHEN u.password = '' THEN 'unregistered' ELSE 'registered' END 
+
+*Update user_status column
+
+update users set user_status='exist-valid'

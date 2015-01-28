@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Notifive_Calendar</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>Jersey</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>Jersey_Services,com.rislin.route.rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Jersey</servlet-name>
+		<url-pattern>/v0-1/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>Service</display-name>
+		<servlet-name>Service</servlet-name>
+		<servlet-class>Message_Route.Service</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Service</servlet-name>
+		<url-pattern>/v0-1/message/route</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>auth</display-name>
+		<servlet-name>auth</servlet-name>
+		<servlet-class>Controller.authorization_code</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>auth</servlet-name>
+		<url-pattern>/auth</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>sync</display-name>
+		<servlet-name>sync</servlet-name>
+		<servlet-class>Controller.Sync_Settings</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sync</servlet-name>
+		<url-pattern>/v0-1/calendar/sync</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>check_token</display-name>
+		<servlet-name>check_token</servlet-name>
+		<servlet-class>Controller.Check_Token</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>check_token</servlet-name>
+		<url-pattern>/check_token</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>sync_selection</display-name>
+		<servlet-name>sync_selection</servlet-name>
+		<servlet-class>Controller.Sync_Selections</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sync_selection</servlet-name>
+		<url-pattern>/sync_selection</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>clear_token</display-name>
+		<servlet-name>clear_token</servlet-name>
+		<servlet-class>Controller.Clear_History</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clear_token</servlet-name>
+		<url-pattern>/Clear_History</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>icalendar</display-name>
+		<servlet-name>icalendar</servlet-name>
+		<servlet-class>Icalendar.iCalendar_Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>icalendar</servlet-name>
+		<url-pattern>/icalendar</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ini</display-name>
+		<servlet-name>ini</servlet-name>
+		<servlet-class>Controller.Ini_Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ini</servlet-name>
+		<url-pattern>/ini</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ApplicationSettings</servlet-name>
+		<servlet-class>com.rislin.util.ApplicationSettings</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+
+	<!-- For LocalHost Testing -->  <!-- 
+	<context-param>
+		<param-name>index_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/index.html</param-value>
+	</context-param>
+	<context-param>
+		<param-name>success_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/Success.html</param-value>
+	</context-param>
+	<context-param>
+		<param-name>error_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/Error.html</param-value>
+	</context-param>
+	<context-param>
+		<param-name>token_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/check_token</param-value>
+	</context-param>
+	<context-param>
+		<param-name>selection_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/sync_selection</param-value>
+	</context-param>
+	<context-param>
+		<param-name>no_sync_page</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/no_sync.html</param-value>
+	</context-param>
+	<context-param>
+		<param-name>client_id</param-name>
+		<param-value>357055730782-b98ddmvu8q8mdca1dbs8sitfphmur2uc.apps.googleusercontent.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>client_secret</param-name>
+		<param-value>AozNsor3wFK7qXP8xJ3dc9tN</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db_user</param-name>
+		<param-value>postgres</param-value>
+	</context-param>
+	<context-param>
+		<param-name>db_password</param-name>
+		<param-value>030590</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jdbc</param-name>
+		<param-value>jdbc:postgresql://localhost:5432/postgres</param-value>
+	</context-param>
+	<context-param>
+		<param-name>jdbc_users</param-name>
+		<param-value>jdbc:postgresql://localhost:5432/user</param-value>
+	</context-param>
+	<context-param>
+		<param-name>redirect_uri</param-name>
+		<param-value>http://localhost:8080/Notifive_Calendar/auth</param-value>
+	</context-param>
+	<context-param>
+		<param-name>current_user</param-name>
+		<param-value>notifive_client_1</param-value>
+	</context-param>
+	<context-param>
+		<param-name>selected_calendar</param-name>
+		<param-value>20</param-value>
+	</context-param>
+	<context-param>
+		<param-name>ics_jdbc</param-name>
+		<param-value>jdbc:postgresql://localhost:5432/postgres</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>notification_api_url</param-name>
+		<param-value>http://rislin.info/notifier2/api/v0-1/notification</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contact_api_url</param-name>
+		<param-value>http://rislin.info/contactservice/api/v0-1/contact</param-value>
+	</context-param>
+	<context-param>
+		<param-name>calendarUrl</param-name>
+		<param-value>http://rislin.net/appointment_ss/appointment.jsp</param-value>
+	</context-param> -->
+
+	<!-- For Rislin Server -->     <context-param> <param-name>index_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/index.html</param-value> 
+		</context-param> <context-param> <param-name>success_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/Success.html</param-value> 
+		</context-param> <context-param> <param-name>error_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/Error.html</param-value> 
+		</context-param> <context-param> <param-name>token_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/check_token</param-value> 
+		</context-param> <context-param> <param-name>ics_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/ics_string.html</param-value> 
+		</context-param> <context-param> <param-name>selection_page</param-name> 
+		<param-value>http://rislin.info/Notifive_Calendar/sync_selection</param-value> 
+		</context-param> <context-param> <param-name>no_sync_page</param-name> <param-value>http://rislin.info/Notifive_Calendar/no_sync.html</param-value> 
+		</context-param> <context-param> <param-name>client_id</param-name> <param-value>357055730782-ce5s36r4ro4squed3lhna7nh1ct1ra1g.apps.googleusercontent.com</param-value> 
+		</context-param> <context-param> <param-name>client_secret</param-name> <param-value>paxHJ_T_5HNVDAE8dKqPZmy7</param-value> 
+		</context-param> <context-param> <param-name>db_user</param-name> <param-value>postgres</param-value> 
+		</context-param> <context-param> <param-name>db_password</param-name> <param-value>postgresadmin@r1sl1n</param-value> 
+		</context-param> <context-param> <param-name>jdbc</param-name> <param-value>jdbc:postgresql://localhost:5432/notifier2</param-value> 
+		</context-param> <context-param> <param-name>ics_jdbc</param-name> <param-value>jdbc:postgresql://localhost:5432/notifier2</param-value> 
+		</context-param> <context-param> <param-name>jdbc_users</param-name> <param-value>jdbc:postgresql://localhost:5432/users</param-value> 
+		</context-param> <context-param> <param-name>redirect_uri</param-name> <param-value>http://rislin.info/Notifive_Calendar/auth</param-value> 
+		</context-param> <context-param> <param-name>current_user</param-name> <param-value>laurie@rislin.com</param-value> 
+		</context-param> <context-param> <param-name>selected_calendar</param-name> 
+		<param-value>22</param-value> </context-param> <context-param> <param-name>notification_api_url</param-name> 
+		<param-value>http://rislin.info/notifier2/api/v0-1/notification</param-value> 
+		</context-param> <context-param> <param-name>campaign.api.url</param-name> 
+		<param-value>http://rislin.info/notifier2/api/v0-1/campaign/subscribe</param-value> 
+		</context-param> <context-param> <param-name>contact_api_url</param-name> 
+		<param-value>http://rislin.info/contactservice/api/v0-1/contact</param-value> 
+		</context-param> <context-param> <param-name>calendarUrl</param-name> <param-value>http://rislin.net/appointment_ss/appointment.jsp</param-value> 
+		</context-param>  
+</web-app>

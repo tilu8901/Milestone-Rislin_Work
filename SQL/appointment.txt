@@ -1,0 +1,30 @@
+
+
+CREATE TABLE table_appointment
+(
+  appointment_id serial NOT NULL,
+  transaction_id integer,
+  client_id character varying NOT NULL,
+  application_id character varying NOT NULL,
+  name character varying,
+  start_date timestamp with time zone,
+  end_date timestamp with time zone,
+  duration integer,
+  all_day boolean,
+  mobile character varying,
+  email character varying,
+  confirmation_status character varying,
+  location character varying,
+  calendar_id integer,
+  title character varying,
+  notes character varying,
+  recurrence_id integer,
+  appointment_type character varying,
+  participant_type character varying,
+  no_of_participants integer
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE table_appointment
+  OWNER TO postgres;

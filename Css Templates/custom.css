@@ -1,0 +1,24 @@
+
+.blackBox{
+	padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    border:1px solid black;
+}
+
+.errorBox{
+	padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    border:1px solid red;
+}
+
+.successBox{
+	padding-top: 25px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    border:1px solid green;
+}

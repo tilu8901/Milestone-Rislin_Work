@@ -1,0 +1,122 @@
+/*
+Rislin Web Style Sheet
+Version: 0.1, 26th Nov 2012
+*/
+
+.main {
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content {
+	padding-bottom:50px;
+	padding-left: 10px;
+	padding-top:10px;
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	background: #233043;
+	color: #ffffff;
+	padding: 7px 0 7px 19px;
+}
+
+.footer a:link,
+.footer a:visited {
+	color: #FFFFFF;
+	background-color: transparent;
+	text-decoration: none;
+}
+.footer a:hover,a:active {text-decoration: underline;}
+
+td {
+	padding: 2pt;
+}
+
+h1 {
+	margin-top: 0pt;
+	font-size: 20pt;
+}
+
+a img {
+	border: 0;
+}
+
+label {
+	font-weight: bold;
+}
+
+html {
+	margin: 0;
+}
+
+body {
+	font-family: verdana; 
+	font-size:10pt; 
+	margin: 0;
+	padding: 0;
+}
+
+.errors {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('../images/errors.png');
+	border: 1px solid;
+	margin-left: 10px;
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+emph {
+	font-weight: bold;
+}
+
+#stylized label {
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:140px;
+	float:left;
+	clear:both;
+}
+
+#stylized input, 
+#stylized textarea {	
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	margin:2px 0 20px 10px;
+}
+
+#stylized p{
+	color:#666666;
+	margin-bottom:20px;
+	border-bottom:solid 1px #b7ddf2;
+	padding-bottom:10px;
+}
+
+#about-logos {
+	position:relative; 
+	width:300px; 
+	height:63px;
+}
+
+#about-agile-logo {
+	float: left; 
+	padding-right: 100px;
+}
+
+#about-logos .rislin-logo {
+	float: right; 
+	position:absolute; 
+	bottom:0px; 
+	right:0;
+}
+
+.rislin-logo {
+	font-size: 7.5px;
+}
+

@@ -1,0 +1,37 @@
+/*
+Rislin Web Style Sheet
+Version: 0.1, 26th Nov 2012
+*/
+
+.content {
+	width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+html {
+	margin: 0;
+}
+
+body {
+	background-color:#ffffff;
+	margin: 0;
+	padding: 0;
+	font-family:verdana,helvetica,arial,sans-serif;
+}
+
+ul#topmenu, ul#topmenu li {list-style: none; display:inline;}
+ul#topmenu li a {text-decoration: none; }
+
+ul#topmenu a:link,a:visited {
+	color: #FFFFFF;
+	background-color: transparent;
+	text-decoration: none;
+}
+ul#topmenu a:hover,a:active {color:#FF0000; background-color:transparent}
+
+ul#topmenu li + li:before{
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -1,0 +1,15 @@
+CREATE TABLE table_route_rules_message
+(
+  id serial NOT NULL,
+  client_id character varying,
+  application_id character varying,
+  message character varying,
+  condition character varying,
+  response character varying,
+  CONSTRAINT table_route_rules_message_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE table_route_rules_message
+  OWNER TO postgres;

@@ -1,0 +1,23 @@
+
+
+CREATE TABLE table_message_inbound_sms
+(
+  id serial NOT NULL,
+  client_id character varying,
+  application_id character varying,
+  from_number character varying,
+  to_number character varying,
+  message character varying,
+  date timestamp with time zone,
+  user_info character varying,
+  fetch_status character varying,
+  fetch_method character varying,
+  route_status character varying,
+  service_provider character varying,
+  CONSTRAINT table_message_inbound_sms_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE table_message_inbound_sms
+  OWNER TO postgres;

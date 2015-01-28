@@ -1,0 +1,19 @@
+
+
+CREATE TABLE table_calendar_schedule
+(
+  calendar_schedule_id serial NOT NULL,
+  client_id character varying NOT NULL,
+  application_id character varying NOT NULL,
+  calendar_id integer NOT NULL,
+  calendar_name character varying NOT NULL,
+  day_name character varying NOT NULL,
+  day_start_time time without time zone,
+  day_finish_time time without time zone,
+  CONSTRAINT table_calendar_schedule_pkey PRIMARY KEY (calendar_schedule_id, client_id, application_id, calendar_id, calendar_name, day_name)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE table_calendar_schedule
+  OWNER TO postgres;
