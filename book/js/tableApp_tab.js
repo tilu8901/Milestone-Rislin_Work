@@ -136,6 +136,7 @@
 				$scope.calendar_id = selected_id;
 				$scope.calendar_name = $scope.getNameById(selected_id);
 				$scope.selectedCalendar = selected_id;
+				$scope.tabs[1].active = true;
 			}
 			
 			$scope.getNameById = function(id){
