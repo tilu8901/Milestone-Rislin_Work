@@ -75,7 +75,7 @@
 				$scope.bookings = [];
 				//recurrence API
 				$http.get(eventRecurrenceUrl,{params:{
-					"key":KEY, "calendar-name": $scope.calendar_name,"appointment-type":"appointment"}})
+					"key":KEY, "calendar-name": $scope.calendar_name,"appointment-type":"appointment-selfservice-session"}})
 				.success(function(data){
 					console.log(JSON.stringify(data));
 					
