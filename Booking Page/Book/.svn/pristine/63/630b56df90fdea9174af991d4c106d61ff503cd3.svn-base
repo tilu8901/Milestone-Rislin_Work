@@ -3,30 +3,12 @@
 		var mainApp = angular
 		.module('tableApp', ['ui.bootstrap'])
 
-		mainApp.controller('bookingTableCtrl',['$scope','$http', function ($scope,$http,$window) {
-		
-			 $scope.tabs = [
-					{ title:'Calendars'},
-					{ title:'Timetable'}
-				];
+		mainApp.controller('bookingTableCtrl',['$scope','$http', function ($scope,$http) {
 			
-
-			
-			
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	
-	
-			
+			//Change details here
+			var CLIENT_ID = "cherian@rislin.com";
+			var APPLICATION_ID = "NOTIFIER_ACCOUNT_cherian@rislin.com";
+			var KEY = "5f5d1b19d86509b5b8646ab7833b856693d1e731";
 			
 			//Switch to true to display table
 			$scope.show = false;
@@ -54,7 +36,7 @@
 			$scope.getCalendars = function(){
 				//recurrence API
 				$http.get(listCalendarUrl,{params:{
-					"key": KEY}})
+					"client-id": CLIENT_ID, "application-id": APPLICATION_ID}})
 				.success(function(data){
 					console.log(JSON.stringify(data));
 					
@@ -88,7 +70,7 @@
 				$scope.bookings = [];
 				//recurrence API
 				$http.get(eventRecurrenceUrl,{params:{
-					"key":KEY, "calendar-name": $scope.calendar_name,"appointment-type":"appointment-selfservice-session"}})
+					"key":KEY, "calendar-name": $scope.calendar_name,"appointment-type":"appointment"}})
 				.success(function(data){
 					console.log(JSON.stringify(data));
 					
@@ -123,7 +105,7 @@
 					console.log($scope.calendar_name);
 					//url API
 					$http.get(calendarUrl,{params:{
-						"key":KEY,"calendar-name":$scope.calendar_name}})
+						"client-id":CLIENT_ID,"application-id":APPLICATION_ID,"calendar-name":$scope.calendar_name}})
 					.success(function(data){
 						console.log(JSON.stringify(data));
 						$scope.bookingHyperlink = data['calendar-url'];
@@ -149,7 +131,6 @@
 				$scope.calendar_id = selected_id;
 				$scope.calendar_name = $scope.getNameById(selected_id);
 				$scope.selectedCalendar = selected_id;
-				$scope.tabs[1].active = true;
 			}
 			
 			$scope.getNameById = function(id){
@@ -165,7 +146,7 @@
 			$scope.getCalendars();	
 		}]);
 			
-		/****************Functions******************/
+		/****************Global Functions******************/
 		
 		//Calendar Object
 		function Calendar(id,name){

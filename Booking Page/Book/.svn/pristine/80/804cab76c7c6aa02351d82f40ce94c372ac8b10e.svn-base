@@ -7,17 +7,21 @@ if($key!=null && $user!=null){
 	
 	//make directory
 	
-	mkdir($user, 0777, true);
+	if(!mkdir($user, 0777, true)){
+		header('HTTP/1.1 500 Internal Server Error');
+		echo "Folder $user already exists...\n";
+		return;
+	}
 	
-	$file = 'book/js/tableApp_tab.js';
+	$file = 'js/tableApp_tab.js';
 	$newfile = $user.'/tableApp_tab.js';
 	if (!copy($file, $newfile)) {
 		header('HTTP/1.1 500 Internal Server Error');
 		echo "failed to copy $file...\n";
 		return;
 	}
-	$file = 'book/timetable_tab.html';
-	$newfile = $user.'/timetable_tab.html';
+	$file = 'timetable.html';
+	$newfile = $user.'/timetable.html';
 	if (!copy($file, $newfile)) {
 		header('HTTP/1.1 500 Internal Server Error');
 		echo "failed to copy $file...\n";
@@ -28,7 +32,13 @@ if($key!=null && $user!=null){
 	
 	$fp=fopen($user.'/tableApp_tab.js','c');
 	fseek($fp,420);
-	fwrite($fp, "var KEY ='".$key."';");
+	if(!fwrite($fp, "var KEY ='".$key."';")){
+		fclose($fp);
+		header('HTTP/1.1 500 Internal Server Error');
+		echo "failed to write to tableApp_tab.js...\n";
+		return;
+	}
+	
 	fclose($fp);
 	header("HTTP/1.1 200 OK");
 	echo 'User Folder '.$user.' Created.';

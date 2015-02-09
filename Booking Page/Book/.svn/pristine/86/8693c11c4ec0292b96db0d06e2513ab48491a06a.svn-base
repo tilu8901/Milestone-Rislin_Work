@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tableApp">
+	<!-- Title here -->
+	<title>Time Table</title>
+	<!-- Description, Keywords and Author -->
+	<meta name="description" content="Small Group Training,Body & Baby Mums Fitness, BoxFit,Mat Pilates  ">
+	<meta name="keywords" content="Paddington, Small Group Training,Body & Baby Mums Fitness, BoxFit,Mat Pilates ">
+	<meta name="author" content="Notifive">  
+	<link rel="stylesheet" type="text/css" href="css/table.css">	
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	
+	<body>
+	<div ng-include="'header.html'"></div>
+	<div ng-include="'navigation.html'"></div>
+	<!-- Content strats -->
+
+	<div class="content">
+	   <div class="container">
+		  <div class="row">
+			 <div class="col-md-12">
+				
+				<!-- Pricing table starts -->
+				
+				<div class="pricing">
+				   <div class="row">
+					<div class="col-md-12">
+					  
+							<!-- Pricing table hero -->
+							<div class="hero">
+							<!-- Title. Don't forget the <span> tag -->
+							<div class="text-center">
+								<h3>Our Fitness Sessions</h3>
+								<p>Our timetable is evolving as we add new classes & locations. So please <a href="../contact-us.html"> contact us </a>	if you would like to start another group at another time and venue </p>
+							</div>
+							
+						 </div>
+						 <!-- Pricing table -->
+						<div class="text-center" ng-controller="bookingTableCtrl as ctrl" id="bookingTable">
+							<!-- Price details. Note down the class name before you edit. -->
+							<div class="row">	
+								<!-- Drop Down Button -->
+								<h4>Select Calendar</h4>
+								<!-- Split button -->
+								<div class="btn-group" dropdown>
+									<button type="button" class="btn btn-danger"><a class="button" ng-bind="calendar_id"></a></button>
+									<button type="button" class="btn btn-danger dropdown-toggle"
+										dropdown-toggle>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li ng-repeat="calendar in calendars" ng-model="calendar_id"><a href="#" ng-click="switchCalendar(calendar.calendar_id)">Calendar {{calendar.calendar_id}}</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">	
+								<!-- Booking Table -->
+								<table ng-repeat="booking in bookings" class="table table-bordered TFtable" ng-show="show">
+									<br ng-if="($index+1)%1==0">
+									<tr ng-hide="!booking.title">
+										<td>
+											<!-- Title -->
+											<h4>{{booking.title}}</h4>
+										</td>
+									</tr>
+									<tr class="active" ng-hide="!booking.description">
+										<td class="text-center">{{booking.description}}</td>
+									</tr>
+									<tr class="active" ng-hide="!booking.time">
+										<td class="text-center">{{booking.time}}</td>
+									</tr>
+									<tr class="active" ng-hide="!booking.location">
+										<td class="text-center">{{booking.location}}</td>
+									</tr>
+									<tr class="active" ng-hide="!bookingHyperlink">
+										<td class="text-center">
+											<div class="button">
+												<a ng-href="{{bookingHyperlink}}"><i class="fa fa-calendar"></i> Book Now</a>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>				
+					 
+					   </div>
+				    </div>
+				</div>
+				
+				
+				<!-- Service ends -->
+	
+				
+			 </div>
+		  </div>
+	   </div>
+	</div>   
+
+	<!-- Content ends --> 
+	
+	<!-- Javascript files -->
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script> 
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+	<script src="js/tableApp.js"></script> 
+			
+	<div ng-include="'footer.html'"></div>
+
+	</body>	
+</html>

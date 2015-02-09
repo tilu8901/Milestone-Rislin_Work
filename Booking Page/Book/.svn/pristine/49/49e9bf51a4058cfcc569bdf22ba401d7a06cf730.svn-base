@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+	<!-- Title here -->
+	<title>Time Table</title>
+	<!-- Description, Keywords and Author -->
+	<meta name="description" content="Small Group Training,Body & Baby Mums Fitness, BoxFit,Mat Pilates  ">
+	<meta name="keywords" content="Paddington, Small Group Training,Body & Baby Mums Fitness, BoxFit,Mat Pilates ">
+	<meta name="author" content="Notifive">
+	
+	<body>
+
+
+	<div ng-include="'header.html'"></div>
+	<div ng-include="'navigation.html'"></div>
+	   
+
+	<!-- Content strats -->
+
+	<div class="content">
+	   <div class="container">
+		  <div class="row">
+			 <div class="col-md-12">
+				
+				<!-- Pricing table starts -->
+				
+				<div class="pricing">
+				   <div class="row">
+					  <div class="col-md-12">
+					  
+						 <!-- Pricing table hero -->
+						 <div class="hero">
+							<!-- Title. Don't forget the <span> tag -->
+							<div class="text-center">
+								<h3>Our Fitness Sessions</h3>
+								<p>Our timetable is evolving as we add new classes & locations. So please <a href="../contact-us.html"> contact us </a>	if you would like to start another group at another time and venue </p>
+							</div>
+							
+						 </div>
+						 <!-- Pricing table -->
+						 
+						 <!-- Price details. Note down the class name before you edit. -->
+						<div class="row">
+						 
+							   <!-- Add the class "phighlight" to highlight specific table -->
+							   
+							   <!-- Pricing table #1. Class name "price-a" -->
+							   <div class="pricel center">
+									 <div class="phead-top">
+										<!-- Title -->
+										<h4>Small Group Training</h4>
+									 </div>
+								  <div class="plist">
+									 <!-- List -->
+									 <ul>
+										<li>Monday, Newtown  6.10am - 6.55am </li>
+										<li>Wednesday, Centennial Park  6am-6.45am </li>
+									 </ul>
+								  </div>
+								  <div class="pbutton">  
+									 <!-- button -->
+									 <div class="button" onclick="buttonOne()"><a href="#"><i class="fa fa-calendar"></i> Book Now</a></div>
+								  </div>
+							   </div>
+						</div>
+
+						<div class="row">
+							   <!-- Pricing table #2. Class name "price-b" -->
+							   <div class="pricel center">
+									 <div class="phead-top">
+										<h4>Body & Baby Mums Fitness</h4>
+									 </div>
+									<div class="plist">
+									 <ul>
+										<li>Monday, Centennial Park  9.30am  </li>
+										<li>Monday, Rose Bay  10.50am </li>
+										<li>Tuesday, Rushcutters Bay  8.45am </li>
+										<li>Wednesday, Centennial Park  9.15am  </li>
+										<li>Thursday, Rushcutters Bay  8.45am </li>
+										<li>Friday, Centennial Park  10.00am  </li>
+										
+									 </ul>
+								  </div>
+								  <div class="pbutton">
+									 <div class="button" onclick="buttonTwo()"><a href="#"><i class="fa fa-calendar"></i> Book Now</a></div>
+								  </div>
+							   </div>   
+									 
+						</div>  
+						
+						
+						<div class="row">
+							
+							   <!-- Pricing table #3. Class name "price-a" -->
+							   <div class="pricel center">
+									 <div class="phead-top">
+										<h4>BoxFit</h4>
+									 </div>
+								  <div class="plist">
+									 <ul>
+										<li>Monday, Cook & Philip Park, CBD  12.30pm  - 1.15pm </li>
+									 </ul>
+								  </div>
+								  <div class="pbutton">
+									 <div class="button" onclick="buttonThree()"><a href="#"><i class="fa fa-calendar"></i> Book Now</a></div>
+								  </div>
+							   </div>
+						</div>
+						
+						<div class="row">
+							   <!-- Pricing table #4. Class name "price-b" -->
+							   <div class="pricel center">
+									 <div class="phead-top">
+										<h4>Mat Pilates</h4>
+									 </div>
+								  <div class="plist">
+									 <ul>
+										<li>Tuesday, Centennial Park  9.45am </li>
+										<li>Wednesday, Paddington  7am - 7.45am </li>
+									 </ul>
+								  </div>
+								  <div class="pbutton">
+									 <div class="button" onclick="buttonFour()"><a href="#"><i class="fa fa-calendar"></i> Book Now</a></div>
+								  </div>
+							   </div>   
+									 
+							   <div class="clearfix"></div>                        
+													   
+						</div>
+							
+							
+					 
+					   </div>
+				    </div>
+				</div>
+				
+				
+				<!-- Service ends -->
+	
+				
+			 </div>
+		  </div>
+	   </div>
+	</div>   
+
+	<!-- Content ends --> 
+	
+	<!-- Javascript files -->
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script> 
+				
+	<div ng-include="'footer.html'"></div>
+
+	</body>	
+</html>

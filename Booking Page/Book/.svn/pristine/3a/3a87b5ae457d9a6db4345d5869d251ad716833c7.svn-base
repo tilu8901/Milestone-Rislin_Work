@@ -10,9 +10,9 @@
 					{ title:'Timetable'}
 				];
 			
-
-			
-			
+			//Change details here
+			var CLIENT_ID = "cherian@rislin.com";
+			var APPLICATION_ID = "NOTIFIER_ACCOUNT_cherian@rislin.com";
 			
 		
 			
@@ -54,7 +54,7 @@
 			$scope.getCalendars = function(){
 				//recurrence API
 				$http.get(listCalendarUrl,{params:{
-					"key": KEY}})
+					"client-id": CLIENT_ID, "application-id": APPLICATION_ID}})
 				.success(function(data){
 					console.log(JSON.stringify(data));
 					
@@ -123,7 +123,7 @@
 					console.log($scope.calendar_name);
 					//url API
 					$http.get(calendarUrl,{params:{
-						"key":KEY,"calendar-name":$scope.calendar_name}})
+						"client-id":CLIENT_ID,"application-id":APPLICATION_ID,"calendar-name":$scope.calendar_name}})
 					.success(function(data){
 						console.log(JSON.stringify(data));
 						$scope.bookingHyperlink = data['calendar-url'];
